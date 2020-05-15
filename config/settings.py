@@ -1,7 +1,7 @@
 import os
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI') or \
                           'postgresql://username:password@hostname/database'
 APP_NAME = os.environ.get('APP_NAME')
 SERVER_NAME = os.environ.get('SERVER_NAME')

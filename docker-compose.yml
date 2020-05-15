@@ -10,6 +10,7 @@ services:
       - '.:/app'
     links:
       - db
+      - dbtest
     env_file:
       - 'docker.env'
     command: >
@@ -30,6 +31,18 @@ services:
     ports:
       - '5432:5432'
 
+  dbtest:
+    restart: always
+    image: 'postgres:12.2'
+    volumes:
+      - 'dbtest:/var/lib/postgresql/test'
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_PASSWORD=teste
+      - POSTGRES_USER=teste
+      - POSTGRES_DB=bexsteste
+
   adminer:
     image: adminer
     restart: always
@@ -40,3 +53,4 @@ services:
 
 volumes:
   db:
+  dbtest:
