@@ -5,11 +5,11 @@ from app import create_app
 @pytest.yield_fixture(scope='session')
 def app():
     params = {
-        'DEBUG': False ,
-        'TESTING': True ,
-        'SERVER_NAME': 'localhost:6000' ,
-        'APP_NAME': 'bexs-test' ,
-        'SQLALCHEMY_DATABASE_URI': 'postgresql://teste:teste@localhost:5433/bexsteste' ,
+        'DEBUG': False,
+        'TESTING': True,
+        'SERVER_NAME': 'localhost:6000',
+        'APP_NAME': 'bexs-test',
+        'SQLALCHEMY_DATABASE_URI': 'postgresql://teste:teste@localhost:5433/bexsteste',
     }
 
     _app = create_app(config=params)
