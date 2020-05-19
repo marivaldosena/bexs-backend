@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "7a199ba4-6f92-46c5-9e71-dee09e15e2d4",
+		"name": "bexs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "Get Questions List - GET /questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/questions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"questions"
+							]
+						},
+						"description": "Get questions list."
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Question - POST /questions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\": \"Question 1\",\n\t\"user\": \"user1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/questions/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"questions",
+								""
+							]
+						},
+						"description": "Create a question."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Question - GET /questions/<question_id>/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/questions/{{question_id}}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"questions",
+								"{{question_id}}",
+								""
+							]
+						},
+						"description": "Get a specific question."
+					},
+					"response": []
+				}
+			],
+			"description": "Question resource related endpoints for the bexs test.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fec5513d-cfd4-4fbc-9027-fed431ce3425",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "95dc3b45-c7d6-4dc6-82a9-3ad410126ba3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Answers",
+			"item": [
+				{
+					"name": "Answer a Question - POST /answers/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": \"username\",\n\t\"text\": \"answer\",\n\t\"questionId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/answers/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"answers",
+								""
+							]
+						},
+						"description": "Answer a specific question."
+					},
+					"response": []
+				}
+			],
+			"description": "Answer resource related endpoints for the bexs test.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f1b7caa0-2b3d-48ff-945f-6aa7907c2b31",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8f1ce0a-91f5-4e61-bc2d-aa6369bb6185",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Is API Running?",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
